@@ -1,22 +1,32 @@
 ﻿@model DeckofCardsModel
 
-
 <form asp-method="post" asp-action="Play" asp-route-id="i6bdww7srht5">
     @*   <input type="hidden" name="numberofCards" value="@Model.remaining"/>
     *@
+    <h6>Number of cards left in this deck: @Model.remaining</h6>
+    <img width="100px" src="https://deckofcardsapi.com/static/img/back.png" />
+    <p></p>
     <button type="submit">Draw 5 Cards</button>
 </form>
-@{
-    <h5>Number of Cards Left: @Model.remaining</h5>
-   
-        foreach (Card c in Model.cards) //Model.deck_id is the name of the property inside the model
-                                        //DeckofCardsModel is the name of the class
+<h6>Select the cards you wish to keep.</h6>
+
+<div class="card-container">
+
+    @{
+        foreach (Card c in Model.cards) //Model.cards is the name of the property inside the model
+                                        //Card is the name of the class
         {
-            <h3>@c.image</h3>
-            <p>@c.value</p>
-            <p>@c.suit</p>
-            <p>@c.code</p>
+            <div class="card">
+
+                <form>
+                    <p><input type="checkbox" name="keep" /> Keep </p>
+
+                </form>
+                <img width="100px" src="@c.image" class="center"/>
+                <p class="center">@c.value of @c.suit</p>
+            </div>
         }
-
-
     }
+</div>
+
+

@@ -34,6 +34,26 @@ namespace Deck_of_Cards_Lab.Controllers
             }
             return View(result);
         }
+
+        //public IActionResult Replace(List<string> keep)
+        //{
+        //    List<Card> newCards = new List<Card>();
+        //    foreach (var card in keep)
+        //    {
+        //        string[] cardParts = card.Split(' ');
+        //        string value = cardParts[0];
+        //        string suit = cardParts[1];
+        //        newCards.Add(new Card {  value = value, suit = suit });
+        //    }
+        //    int unkepCount = Model.cards.Count - keptCards.Count;
+        //    for (int i = 0; i < unkepCount; i++)
+        //    {
+        //        newCards.Add(DrawNewCardFromDeck());
+
+        //    }
+        //    ModelBinderAttribute.cards = newCards;
+        //    return View(Play, Model);
+        //}
         public IActionResult Privacy()
         {
             return View();
